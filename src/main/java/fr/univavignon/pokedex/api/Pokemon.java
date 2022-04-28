@@ -53,6 +53,7 @@ public final class Pokemon extends PokemonMetadata {
 		this.dust = dust;
 		this.candy = candy;
 		this.iv = iv;
+		
 	}
 
 	/** Combat Point getter getter. **/
