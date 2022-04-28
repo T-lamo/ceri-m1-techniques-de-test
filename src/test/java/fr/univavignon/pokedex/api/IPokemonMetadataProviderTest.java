@@ -49,7 +49,7 @@ public class IPokemonMetadataProviderTest {
 			            		 return metadata1;
 			            	 }
 			            	 if(index==133){
-			            		return metadata1;
+			            		return metadata2;
 			            	 }
 			             }
 			             return 0;
