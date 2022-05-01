@@ -8,16 +8,24 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 public class IPokemonTrainerFactoryTest {
 	
+	
+	IPokedexFactory pokedexFactory = Mockito.mock(IPokedexFactory.class);
+	IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
+	IPokemonMetadataProvider metadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
+	
+	
+	@Before
+	 public void setUp() {
+		 pokedexFactory = Mockito.mock(IPokedexFactory.class);
+		 metadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
+		 pokemonFactory = Mockito.mock(IPokemonFactory.class);
+	}
+	
 	@Test
 	  public void testIPokemonTrainerFactory() throws PokedexException  {
 		
 		
-		//IPokemonTrainerFactory metadataProvider = Mockito.mock(IPokemonTrainerFactory.class);
 		
-		//IPokedexFactory pokedexFactory = Mockito.mock(IPokedexFactory.class);
-
-		
-
 
 	  }
 }

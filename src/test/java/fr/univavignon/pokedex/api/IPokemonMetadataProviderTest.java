@@ -15,11 +15,18 @@ import org.mockito.stubbing.Answer;
 @RunWith(MockitoJUnitRunner.class)
 public class IPokemonMetadataProviderTest {
 
-	IPokemonMetadataProvider metadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
+	IPokemonMetadataProvider metadataProvider;
 	//IPokemonMetadataProvider metadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
-	PokemonMetadata metadata1 =new PokemonMetadata(0,"Bulbizarre",126,126,90);
-	PokemonMetadata metadata2 =new PokemonMetadata(133,"Aquali",186,168,260);
-
+	PokemonMetadata metadata1 ;
+	PokemonMetadata metadata2 ;
+	
+	@Before
+	 public void setUp() {
+		 metadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
+		 metadata1 =new PokemonMetadata(0,"Bulbizarre",126,126,90);
+		 metadata2 =new PokemonMetadata(133,"Aquali",186,168,260);
+			
+	}
 	@Test
 	  public void testMetadataProvider() throws PokedexException  {
 		
@@ -52,6 +59,8 @@ public class IPokemonMetadataProviderTest {
 			            		return metadata2;
 			            	 }
 			             }
+			            
+			           
 			             return 0;
 			         }
 				}

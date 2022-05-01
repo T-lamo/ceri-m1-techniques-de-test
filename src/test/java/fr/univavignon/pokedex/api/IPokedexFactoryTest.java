@@ -9,22 +9,22 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class IPokedexFactoryTest {
+	
+	IPokemonMetadataProvider metadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
+	IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
+	
+	
+	@Before
+	 public void setUp() {
+		 metadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
+		 pokemonFactory = Mockito.mock(IPokemonFactory.class);
+	}
+	
 	@Test
 	  public void testIPokedexFactoryTest() throws PokedexException  {
 		
 		
-		/*IPokemonMetadataProvider metadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
-		Mockito.when(metadataProvider.getPokemonMetadata(0)).thenReturn(new PokemonMetadata(0,"Bulbizarre",126,126,90));
-		//Mockito.when(metadataProvider.getPokemonMetadata(133)).thenReturn(new PokemonMetadata(133,"Aquali",186,168,260));
-
 		
-		IPokemonFactory pokemonFactory =  Mockito.mock(IPokemonFactory.class);
-		Mockito.when(pokemonFactory.createPokemon(0,613,64,4000,4)).thenReturn(new Pokemon(0,"Bulbizarre",126,126,90,613, 64,4000,  4, 0.56));
-		
-		IPokedexFactory pokedexFactory = Mockito.mock(IPokedexFactory.class);
-		//Mockito.when(pokedexFactory.createPokedex(metadataProvider, pokemonFactory));
-		*/
 	  }
 	
-	//Pokemon createPokemon(int index, int cp, int hp, int dust, int candy);
 }

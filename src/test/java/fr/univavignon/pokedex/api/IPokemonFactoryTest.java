@@ -15,8 +15,15 @@ import org.mockito.stubbing.Answer;
 @RunWith(MockitoJUnitRunner.class)
 public class IPokemonFactoryTest {
 	IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
-	Pokemon pokemon1 = new Pokemon(0,"Bulbizarre",126,126,90,613,64,4000,4,0.56);
-	Pokemon pokemon2 = new Pokemon(133,"Aquali",186,168,260,2729,202,5000,4,1);
+	Pokemon pokemon1;
+	Pokemon pokemon2;
+	
+	@Before
+	 public void setUp() {
+		pokemonFactory = Mockito.mock(IPokemonFactory.class);
+		pokemon1 = new Pokemon(0,"Bulbizarre",126,126,90,613,64,4000,4,0.56);
+		pokemon2 = new Pokemon(133,"Aquali",186,168,260,2729,202,5000,4,1);
+	}
 
 	@Test
 	  public void testIPokemonFactory() throws PokedexException  {
