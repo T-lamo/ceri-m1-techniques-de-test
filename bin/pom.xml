@@ -1,0 +1,131 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>fr.univavignon.pokedex.api</groupId>
+  <artifactId>mon-appli</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>mon-appli</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    
+    <myTestSourceDirectory>${project.basedir}/src/test/java</myTestSourceDirectory>
+      
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+	    <groupId>org.testng</groupId>
+	    <artifactId>testng</artifactId>
+	    <version>7.1.0</version>
+	    <scope>test</scope>
+	</dependency>
+    
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>4.4.0</version>
+      <scope>test</scope>
+    </dependency>
+    
+  </dependencies>
+  
+  
+ <build>
+ 	<defaultGoal>install</defaultGoal>
+    <finalName>mon-appli</finalName>
+    <testSourceDirectory>${myTestSourceDirectory}</testSourceDirectory>
+    
+    
+     <pluginManagement>
+     
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.0.0-M6</version>
+        </plugin>     
+         <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-compiler-plugin</artifactId>
+	      <version>3.3</version>
+	      <configuration>
+	        <source>1.8</source>
+	        <target>1.8</target>
+	      </configuration>
+	     
+	    </plugin>
+	     <plugin>
+		   <groupId>org.codehaus.modello</groupId>
+		   <artifactId>modello-maven-plugin</artifactId>
+		   <version>1.8.1</version>
+		   <executions>
+		     <execution>
+		       <configuration>
+		         <models>
+		           <model>src/main/mdo/maven.mdo</model>
+		         </models>
+		         <version>4.0.0</version>
+		       </configuration>
+		       <goals>
+		         <goal>java</goal>
+		       </goals>
+		     </execution>
+		   </executions>
+	 </plugin>
+	 
+	 <plugin>
+		<groupId>org.jacoco</groupId>
+		<artifactId>jacoco-maven-plugin</artifactId>
+		<version>0.8.9-SNAPSHOT</version>
+		<executions>
+			<execution>
+				<id>default-prepare-agent</id>
+				<goals>
+					<goal>prepare-agent</goal>
+				</goals>
+			</execution>
+			<execution>
+				<id>default-report</id>
+				<goals>
+					<goal>report</goal>
+				</goals>
+			</execution>
+				<execution>
+					<id>default-check</id>
+					<goals>
+						<goal>check</goal>
+					</goals>
+					<configuration>
+						<rules>
+							<rule>
+								<element>BUNDLE</element>
+								<limits>
+									<limit>
+										<counter>COMPLEXITY</counter>
+										<value>COVEREDRATIO</value>
+										<minimum>0.60</minimum>
+									</limit>
+								</limits>
+							</rule>
+						</rules>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+      </plugins>
+    </pluginManagement> 
+    
+ </build>
+
+</project>
