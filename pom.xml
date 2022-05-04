@@ -35,99 +35,89 @@
 		</dependency>
 	</dependencies>
 	<build>
-	    <defaultGoal>install</defaultGoal>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.10.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.1</version>
-				<executions>
-					<execution>
-						<id>id.test</id>
-						<phase>test</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<tasks>
-								<echo>in test phase (13 of 21)</echo>
-							</tasks>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <!-- J'ajoute les sources -->
-                    <execution>
-                        <id>add-source</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <!-- Les répertoires de sources se placent ici -->
-                                <source>app</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                    <!-- J'ajoute les tests -->
-                    <execution>
-                        <id>add-test-source</id>
-                        <phase>generate-test-sources</phase>
-                        <goals>
-                            <goal>add-test-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <!-- Les répertoires contenant les tests se placent ici -->
-                                <source>test</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.5</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>report</id>
-						<phase>test</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-		<extensions>
-			<!-- begin - needed for deploying to repository using webdav -->
-			<extension>
-				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-webdav</artifactId>
-				<version>1.0-beta-2</version>
-			</extension>
-			<!-- end - needed for deploying to repository using webdav -->
-		</extensions>
-	</build>
+ 	<defaultGoal>install</defaultGoal>
+    <finalName>mon-appli</finalName>
+    <testSourceDirectory>${myTestSourceDirectory}</testSourceDirectory>
+
+
+     <pluginManagement>
+
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.0.0-M6</version>
+        </plugin>     
+         <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-compiler-plugin</artifactId>
+	      <version>3.3</version>
+	      <configuration>
+	        <source>1.8</source>
+	        <target>1.8</target>
+	      </configuration>
+
+	    </plugin>
+	     <plugin>
+		   <groupId>org.codehaus.modello</groupId>
+		   <artifactId>modello-maven-plugin</artifactId>
+		   <version>1.8.1</version>
+		   <executions>
+		     <execution>
+		       <configuration>
+		         <models>
+		           <model>src/main/mdo/maven.mdo</model>
+		         </models>
+		         <version>4.0.0</version>
+		       </configuration>
+		       <goals>
+		         <goal>java</goal>
+		       </goals>
+		     </execution>
+		   </executions>
+	 </plugin>
+
+	 <plugin>
+		<groupId>org.jacoco</groupId>
+		<artifactId>jacoco-maven-plugin</artifactId>
+		<version>0.8.9-SNAPSHOT</version>
+		<executions>
+			<execution>
+				<id>default-prepare-agent</id>
+				<goals>
+					<goal>prepare-agent</goal>
+				</goals>
+			</execution>
+			<execution>
+				<id>default-report</id>
+				<goals>
+					<goal>report</goal>
+				</goals>
+			</execution>
+				<execution>
+					<id>default-check</id>
+					<goals>
+						<goal>check</goal>
+					</goals>
+					<configuration>
+						<rules>
+							<rule>
+								<element>BUNDLE</element>
+								<limits>
+									<limit>
+										<counter>COMPLEXITY</counter>
+										<value>COVEREDRATIO</value>
+										<minimum>0.60</minimum>
+									</limit>
+								</limits>
+							</rule>
+						</rules>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+      </plugins>
+    </pluginManagement> 
+
+ </build>
 </project>
