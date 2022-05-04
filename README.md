@@ -4,6 +4,8 @@ Grp1 classique.
 
 [![codecov](https://codecov.io/gh/T-lamo/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=J3962SBRS8)](https://codecov.io/gh/T-lamo/ceri-m1-techniques-de-test)
 
+[![CircleCI](https://circleci.com/gh/T-lamo/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://circleci.com/gh/T-lamo/ceri-m1-techniques-de-test/tree/master)
+
 Un badge pour la couverture de test.
 
 
