@@ -1,3 +1,12 @@
+#Badger
+DORCEUS Amos.
+Grp1 classique.
+
+[![codecov](https://codecov.io/gh/T-lamo/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=J3962SBRS8)](https://codecov.io/gh/T-lamo/ceri-m1-techniques-de-test)
+
+Un badge pour la couverture de test.
+
+
 # UCE Génie Logiciel Avancé : Techniques de tests
 
 ## Introduction
