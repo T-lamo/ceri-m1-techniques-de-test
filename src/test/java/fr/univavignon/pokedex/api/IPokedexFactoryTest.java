@@ -7,6 +7,8 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import fr.univavignon.pokedex.api.IPokemonFactory;
+
 @RunWith(MockitoJUnitRunner.class)
 public class IPokedexFactoryTest {
 	
