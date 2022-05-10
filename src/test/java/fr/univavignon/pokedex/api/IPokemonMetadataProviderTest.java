@@ -19,7 +19,6 @@ import org.mockito.stubbing.Answer;
 @RunWith(MockitoJUnitRunner.class)
 public class IPokemonMetadataProviderTest {
 	IPokemonMetadataProvider metadataProvider;
-	//IPokemonMetadataProvider metadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
 	PokemonMetadata metadata1 ;
 	PokemonMetadata metadata2 ;
 	
@@ -32,10 +31,8 @@ public class IPokemonMetadataProviderTest {
 	}
 	@Test
 	  public void testMetadataProvider() throws PokedexException  {
-		
 		passArgument(0);
 		passArgument(133);
-
 		assertEquals(metadata1,metadataProvider.getPokemonMetadata(0));
 		assertEquals(metadata2,metadataProvider.getPokemonMetadata(133));
 		assertEquals(null,metadataProvider.getPokemonMetadata(-1));
@@ -61,9 +58,6 @@ public class IPokemonMetadataProviderTest {
 			            	 if(index==133){
 			            		return metadata2;
 			            	 }
-			             }
-			            
-			           
 			             return 0;
 			         }
 				}
