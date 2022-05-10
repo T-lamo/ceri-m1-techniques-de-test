@@ -104,6 +104,22 @@
 		</executions>
 	</plugin>
 		
+	<plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-checkstyle-plugin</artifactId>
+	    <dependencies>
+	        <dependency>
+	            <groupId>com.puppycrawl.tools</groupId>
+	            <artifactId>checkstyle</artifactId>
+	            <version>6.1.1</version>
+	        </dependency>
+	    </dependencies>
+	    <configuration> 
+	        <skip>true</skip>
+	        
+	    </configuration>
+	</plugin>
+		
 
       </plugins>
       
