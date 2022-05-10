@@ -31,17 +31,13 @@ public class IPokemonMetadataProviderTest {
 	}
 	@Test
 	  public void testMetadataProvider() throws PokedexException  {
+		
 		passArgument(0);
 		passArgument(133);
 		assertEquals(metadata1,metadataProvider.getPokemonMetadata(0));
 		assertEquals(metadata2,metadataProvider.getPokemonMetadata(133));
 		assertEquals(null,metadataProvider.getPokemonMetadata(-1));
 		assertEquals(null,metadataProvider.getPokemonMetadata(151));
-
-		//Mockito.when(metadataProvider.getPokemonMetadata(0)).thenReturn(metadata1);
-		/*Mockito.when(metadataProvider.getPokemonMetadata(133)).thenReturn(new PokemonMetadata(133,"Aquali",186,168,260));
-		PokemonMetadata pokomonMetadata = Mockito.mock(PokemonMetadata.class);
-		assertEquals("Aquali",metadataProvider.getPokemonMetadata(133).getName());*/
 	  }
 	
 	public void passArgument(int index) throws PokedexException {
@@ -58,10 +54,11 @@ public class IPokemonMetadataProviderTest {
 			            	 if(index==133){
 			            		return metadata2;
 			            	 }
+			             }
 			             return 0;
 			         }
 				}
-			); 
+        ); 
 	}
 	
 }
