@@ -29,16 +29,7 @@ public class IPokemonMetadataProviderTest {
 		 metadata2 =new PokemonMetadata(133,"Aquali",186,168,260);
 			
 	}
-	@Test
-	  public void testMetadataProvider() throws PokedexException  {
-		
-		passArgument(0);
-		passArgument(133);
-		assertEquals(metadata1,metadataProvider.getPokemonMetadata(0));
-		assertEquals(metadata2,metadataProvider.getPokemonMetadata(133));
-		assertEquals(null,metadataProvider.getPokemonMetadata(-1));
-		assertEquals(null,metadataProvider.getPokemonMetadata(151));
-	  }
+	
 	
 	public void passArgument(int index) throws PokedexException {
 		Mockito.when(metadataProvider.getPokemonMetadata(index)).thenAnswer(
