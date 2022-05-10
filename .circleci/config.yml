@@ -30,8 +30,8 @@ jobs:
           command: mvn test
       - codecov/upload
       - run:
-      	  name: checkstyle
-      	  command: mvn checkstyle 
+         name: checkstyle
+         command: mvn checkstyle 
       
 
 # Invoke jobs via workflows
