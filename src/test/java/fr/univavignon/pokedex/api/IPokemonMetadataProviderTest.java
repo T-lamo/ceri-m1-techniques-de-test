@@ -14,7 +14,6 @@ import org.mockito.stubbing.Answer;
 
 @RunWith(MockitoJUnitRunner.class)
 public class IPokemonMetadataProviderTest {
-
 	IPokemonMetadataProvider metadataProvider;
 	//IPokemonMetadataProvider metadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
 	PokemonMetadata metadata1 ;
