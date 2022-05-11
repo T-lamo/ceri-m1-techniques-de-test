@@ -61,6 +61,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="testIPokedexSize" time="0"/>
-  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="verifierAjoutPokemon" time="0.017"/>
+  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="testIPokedexSize" time="0.001"/>
+  <testcase classname="fr.univavignon.pokedex.api.IPokedexTest" name="verifierAjoutPokemon" time="0.016"/>
 </testsuite>
