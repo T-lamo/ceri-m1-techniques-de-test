@@ -51,7 +51,7 @@ jobs:
               git config user.name "T-lamo"
         - run:
             name: Deploy docs to gh-pages branch
-            command: gh-pages --dist docs/_build/html
+            command: gh-pages --dist target/site/apidocs
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
