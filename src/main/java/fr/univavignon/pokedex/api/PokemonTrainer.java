@@ -34,7 +34,9 @@ public class PokemonTrainer {
 		return name;
 	}
 
-	/** Team getter. **/
+	/** Team getter. *
+	 *@return test 
+	*/
 	public Team getTeam() {
 		return team;
 	}
