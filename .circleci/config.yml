@@ -33,7 +33,6 @@ jobs:
          name: checkstyle
          command: mvn -DskipTests checkstyle:checkstyle 
       
-      
   docs-deploy:
       docker:
         - image: node:8.10.0
