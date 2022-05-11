@@ -6,6 +6,9 @@ Grp1 classique.
 
 [![CircleCI](https://circleci.com/gh/T-lamo/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://circleci.com/gh/T-lamo/ceri-m1-techniques-de-test/tree/master)
 
+
+ceri-m1-techniques-de-test/target/site/badges/
+
 Un badge pour la couverture de test.
 
 
