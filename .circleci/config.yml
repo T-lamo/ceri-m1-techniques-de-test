@@ -32,6 +32,9 @@ jobs:
       - run:
          name: checkstyle
          command: mvn -DskipTests checkstyle:checkstyle 
+      - run:
+         name: javadoc
+         command: mvn javadoc:javadoc 
       
   docs-deploy:
       docker:
