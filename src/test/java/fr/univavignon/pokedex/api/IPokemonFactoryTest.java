@@ -11,7 +11,11 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
-
+/**
+ * 
+ * @author amos
+ *C' est genial ce truc
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class IPokemonFactoryTest {
 	IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
