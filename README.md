@@ -8,8 +8,8 @@ Grp1 classique.
 
 ![alt text](https://github.com/T-lamo/ceri-m1-techniques-de-test/blob/master/target/site/badges/checkstyle-result.svg)
 
+[![javadoc](https://javadoc.io/badge2/org.springframework/spring-core/javadoc.svg)](https://javadoc.io/doc/org.springframework/spring-core)
 
-Un badge pour la couverture de test.
 
 
 # UCE Génie Logiciel Avancé : Techniques de tests
