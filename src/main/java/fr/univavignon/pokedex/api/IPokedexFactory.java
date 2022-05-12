@@ -3,7 +3,7 @@ package fr.univavignon.pokedex.api;
 /**
  * Factory interface for class that aims to create IPokedex instance.
  * 
- * @author fv
+ * @author fv c'est Amos
  */
 public interface IPokedexFactory {
 
